@@ -1,0 +1,75 @@
+[
+    {
+      "serviceId": 1,
+      "serviceName": "Winter Coat Fitting for Dogs",
+      "providerName": "PawCare Studio",
+      "providerEmail": "info@pawcare.com",
+      "price": 25,
+      "rating": 4.9,
+      "slotsAvailable": 4,
+      "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+      "image": "http://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/01/10143602/Poodle-puppy-wearing-a-jacket-in-winter.jpeg",
+      "category": "Clothing"
+    },
+    {
+      "serviceId": 2,
+      "serviceName": "Winter Grooming & Paw Treatment",
+      "providerName": "CozyPets Grooming",
+      "providerEmail": "hello@cozypets.com",
+      "price": 30,
+      "rating": 4.8,
+      "slotsAvailable": 3,
+      "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+      "image": "https://pet-health-content-media.chewy.com/wp-content/uploads/2025/04/16141545/202503bec-202412muddy-dog-paws-1024x615.jpg",
+      "category": "Grooming"
+    },
+    {
+      "serviceId": 3,
+      "serviceName": "Heated Pet Boarding Cabin",
+      "providerName": "Warm Paws Lodge",
+      "providerEmail": "contact@warmpaws.com",
+      "price": 40,
+      "rating": 5.0,
+      "slotsAvailable": 2,
+      "description": "Safe and heated cabins for pets to stay cozy during winter nights.",
+      "image": "https://m.media-amazon.com/images/I/41M8IX8HIZL.jpg",
+      "category": "Boarding"
+    },
+    {
+      "serviceId": 4,
+      "serviceName": "Winter Walk Assistance",
+      "providerName": "SnowyTail Care",
+      "providerEmail": "support@snowytail.com",
+      "price": 20,
+      "rating": 4.7,
+      "slotsAvailable": 5,
+      "description": "Guided winter walks with pet-safe boots and jackets for outdoor comfort.",
+      "image": "https://pet-health-content-media.chewy.com/wp-content/uploads/2025/04/16155613/202504bec-bec-202101walking-dog-winter-1024x615.jpg",
+      "category": "Walking"
+    },
+    {
+      "serviceId": 5,
+      "serviceName": "Warm Blanket & Bed Setup",
+      "providerName": "CozyNest Pets",
+      "providerEmail": "info@cozynest.com",
+      "price": 18,
+      "rating": 4.6,
+      "slotsAvailable": 6,
+      "description": "Personalized bedding with soft, heat-retaining blankets for winter naps.",
+      "image": "https://m.media-amazon.com/images/I/61ghPJPS8SS._UF1000,1000_QL80_.jpg",
+      "category": "Comfort"
+    },
+    {
+      "serviceId": 6,
+      "serviceName": "Nutrient-Rich Winter Meals",
+      "providerName": "HealthyTails Kitchen",
+      "providerEmail": "care@healthytails.com",
+      "price": 22,
+      "rating": 4.9,
+      "slotsAvailable": 4,
+      "description": "Delicious, vitamin-packed meals to boost energy and keep pets strong during the cold season.",
+      "image": "https://www.hindustantimes.com/ht-img/img/2023/12/12/550x309/pet_nutrition_1702385553348_1702385566754.jpg",
+      "category": "Nutrition"
+    }
+  ]
+  
