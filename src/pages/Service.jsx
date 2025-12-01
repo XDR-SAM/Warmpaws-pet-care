@@ -1,27 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../components/AuthProvider'
 import ServiceCard from '../components/ServiceCard'
 import 'animate.css'
 
 const Service = () => {
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(true)
-  // const [error, setError] = useState(null)
-  const { user } = useAuth()
-  const navigate = useNavigate()
 
   useEffect(() => {
-    // Check if user is logged in
-    if (!user) {
-      navigate('/login', { state: { from: { pathname: '/service' } } })
-      return
-    }
-    // if (!user) {
-    //   navigate('/login')
-    //   return
-    // }
-
     // Fetch services data
     fetch('/services.json')
       .then(res => res.json())
@@ -32,9 +17,8 @@ const Service = () => {
       .catch(error => {
         console.error('Error fetching services:', error)
         setLoading(false)
-        // setError('Failed to load services')
       })
-  }, [user, navigate])
+  }, [])
 
   if (loading) {
     return (

@@ -17,7 +17,6 @@ const Signup = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [passwordErrors, setPasswordErrors] = useState([])
-  // const [error, setError] = useState('')
   
   const { signup, loginWithGoogle } = useAuth()
   const navigate = useNavigate()
@@ -34,9 +33,6 @@ const Signup = () => {
       errors.push('Password must contain at least one lowercase letter')
     }
     return errors
-    // if (!/[0-9]/.test(password)) {
-    //   errors.push('Password must contain at least one number')
-    // }
   }
 
   const handleChange = (e) => {
@@ -72,15 +68,12 @@ const Signup = () => {
       const result = await signup(formData.name, formData.email, formData.password, formData.photoURL)
       if (result.success) {
         toast.success('Account created successfully!')
-        // toast.succes('Account created successfully!')
         navigate('/')
       } else {
         toast.error(result.error)
-        // toast.error('Failed to create account')
       }
     } catch (error) {
       toast.error('An error occurred during signup')
-      // console.log(error.message)
     } finally {
       setIsLoading(false)
     }
@@ -98,7 +91,6 @@ const Signup = () => {
       }
     } catch (error) {
       toast.error('An error occurred during Google signup')
-      // console.error('Google signup error:', error)
     } finally {
       setIsLoading(false)
     }
@@ -111,9 +103,6 @@ const Signup = () => {
           <h2 className="text-4xl font-bold text-gray-900 mb-2">
             Join WarmPaws
           </h2>
-          {/* <h2 className="text-4xl font-bold text-gray-900 mb-2">
-            Create Your Account
-          </h2> */}
           <p className="text-gray-600">
             Create your account to get started
           </p>
@@ -157,9 +146,6 @@ const Signup = () => {
               <label htmlFor="photoURL" className="block text-sm font-medium text-gray-700 mb-2">
                 Photo URL
               </label>
-              {/* <label htmlFor="photoURL" className="block text-sm font-medium text-gray-700 mb-2">
-                Photo URL (Optional)
-              </label> */}
               <input
                 id="photoURL"
                 name="photoURL"
@@ -255,13 +241,6 @@ const Signup = () => {
             >
               {isLoading ? 'Creating Account...' : 'Create Account'}
             </button>
-            {/* <button
-              type="submit"
-              disabled={isLoading || passwordErrors.length > 0}
-              className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-pink-600 disabled:opacity-50 transition-all duration-200"
-            >
-              {isLoading ? 'Creating Account...' : 'Create Account'}
-            </button> */}
           </form>
 
           <div className="mt-6">

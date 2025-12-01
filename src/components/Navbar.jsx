@@ -8,19 +8,15 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  // const [isLoading, setIsLoading] = useState(true);
 
   const handleLogout = async () => {
     setIsLoading(true);
     try {
       await logout();
       toast.success('Logged out successfully');
-      // toast.succes('Logged out successfully');
       navigate('/');
-      // navigate('/home');
     } catch {
       toast.error('Failed to logout');
-      // console.log(error);
     } finally {
       setIsLoading(false);
     }
@@ -34,7 +30,6 @@ const Navbar = () => {
           <div className="flex-1">
             <Link to="/" className="flex items-center space-x-2">
               <img src={logo} alt="WarmPaws Logo" className="w-12 h-8 object-contain" />
-              {/* <img src={logo} alt="WarmPaws Logo" className="w-12 h-12 object-contain" /> */}
               <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
                 WarmPaws
               </span>
@@ -62,12 +57,22 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/my-profile"
+                  to="/about-us"
                   className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
                 >
-                  My Profile
+                  About Us
                 </Link>
               </li>
+              {user && (
+                <li>
+                  <Link
+                    to="/my-profile"
+                    className="text-gray-700 hover:text-orange-500 font-medium transition-colors"
+                  >
+                    My Profile
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 
@@ -83,29 +88,20 @@ const Navbar = () => {
                 >
                   {isLoading ? 'Logging out...' : 'Logout'}
                 </button>
-                {/* <button
-                  onClick={handleLogout}
-                  disabled={isLoading}
-                  className="hidden lg:inline btn btn-outline btn-sm border-red-500 text-red-500 hover:bg-red-500 disabled:opacity-50"
-                >
-                  {isLoading ? 'Logging out...' : 'Logout'}
-                </button> */}
 
                 {/* User Avatar with Dropdown */}
                 <div className="dropdown dropdown-end">
-                  <div 
-                    tabIndex={0} 
-                    role="button" 
+                  <div
+                    tabIndex={0}
+                    role="button"
                     className="btn btn-ghost btn-circle avatar relative group"
                     title={user.displayName || 'User'}
                   >
                     <div className="w-10 rounded-full ring ring-orange-400 ring-offset-2">
-                      {/* <div className="w-10 rounded-full ring ring-orange-400"> */}
                       <img
                         src={user.photoURL || `https://ui-avatars.com/api/?name=${user.displayName}&background=ff6b35&color=fff`}
                         alt={user.displayName || 'User'}
                       />
-                      {/* <img src={user.photoURL} alt={user.displayName} /> */}
                     </div>
                     <span className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
                       {user.displayName || 'User'}
@@ -142,11 +138,6 @@ const Navbar = () => {
                     Login
                   </button>
                 </Link>
-                {/* <Link to="/login">
-                  <button className="btn btn-outline btn-sm border-orange-500 text-orange-500 hover:bg-orange-500">
-                    Login
-                  </button>
-                </Link> */}
                 <Link to="/signup">
                   <button className="btn btn-sm bg-gradient-to-r from-orange-500 to-pink-500 text-white border-none hover:from-orange-600 hover:to-pink-600">
                     Register
@@ -158,7 +149,6 @@ const Navbar = () => {
             {/* Mobile menu view */}
             <div className="dropdown dropdown-end lg:hidden">
               <div tabIndex={0} role="button" className="btn btn-ghost">
-                {/* <div tabIndex={0} role="button" className="btn btn-ghost btn-circle"> */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -185,11 +175,15 @@ const Navbar = () => {
                   <Link to="/service" className="text-gray-700 hover:text-orange-500">Services</Link>
                 </li>
                 <li>
-                  <Link to="/my-profile" className="text-gray-700 hover:text-orange-500">My Profile</Link>
+                  <Link to="/about-us" className="text-gray-700 hover:text-orange-500">About Us</Link>
                 </li>
+                {user && (
+                  <li>
+                    <Link to="/my-profile" className="text-gray-700 hover:text-orange-500">My Profile</Link>
+                  </li>
+                )}
                 {!user && (
                   <>
-                    {/* {user === null && ( */}
                     <li className="mt-2 border-t pt-2">
                       <Link to="/login" className="text-orange-500 hover:bg-orange-50">Login</Link>
                     </li>

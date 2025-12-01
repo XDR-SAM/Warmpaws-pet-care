@@ -7,7 +7,9 @@ import Service from '../pages/Service'
 import ServiceDetails from '../pages/ServiceDetails'
 import ForgotPassword from '../pages/ForgotPassword'
 import NotFound from '../pages/NotFound'
-// import PrivateRoute from './PrivateRoute'
+import AboutUs from '../pages/AboutUs'
+
+import PrivateRoute from './PrivateRoute'
 
 const AppRoutes = () => {
   return (
@@ -15,15 +17,11 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      {/* <Route path="/register" element={<Signup />} /> */}
-      <Route path="/my-profile" element={<MyProfile />} />
-      {/* <Route path="/profile" element={<MyProfile />} /> */}
+      <Route path="/my-profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
       <Route path="/service" element={<Service />} />
-      {/* <Route path="/services" element={<Service />} /> */}
       <Route path="/service/:id" element={<ServiceDetails />} />
-      {/* <Route path="/services/:id" element={<ServiceDetails />} /> */}
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      {/* <Route path="/reset-password" element={<ForgotPassword />} /> */}
+      <Route path="/about-us" element={<AboutUs />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

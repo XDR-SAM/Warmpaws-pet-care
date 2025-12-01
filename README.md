@@ -1,13 +1,8 @@
-![image](warmpawss.png)
-
 # WarmPaws - Pet Care in Winter
 
 A cozy winter companion platform designed for pet owners to ensure their furry friends stay warm, safe, and healthy during the cold season. Users can explore local pet care services, winter pet clothing, grooming options, and expert tips — all in one friendly interface.
 
-## Live Link 
- https://warmpaw-sami.netlify.app
-
-##  Key Features
+## 🌟 Key Features
 
 - **Hero Slider**: Automatic image carousel showcasing winter pet care services
 - **Service Discovery**: Browse and book winter care services for pets
@@ -19,7 +14,7 @@ A cozy winter companion platform designed for pet owners to ensure their furry f
 - **Responsive Design**: Fully responsive on mobile, tablet, and desktop
 - **Modern UI**: Clean, minimalist design with smooth animations
 
-##  Tech Stack
+## 🛠️ Tech Stack
 
 - **Frontend**: React 19.1.1
 - **Routing**: React Router 
@@ -30,7 +25,57 @@ A cozy winter companion platform designed for pet owners to ensure their furry f
 - **Image Slider**: Swiper 12.0.3
 - **Build Tool**: Vite 7.1.7
 
-##  Getting Started
+## 📂 Folder Structure
+
+```bash
+WarmPaws/
+├── .env
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+├── public/
+└── src/
+    ├── App.css
+    ├── App.jsx
+    ├── index.css
+    ├── main.jsx
+    ├── assets/
+    │   ├── google.png
+    │   ├── hero1.png
+    │   ├── hero2.png
+    │   ├── hero3.png
+    │   ├── logo.png
+    │   ├── react.svg
+    │   ├── vet1.jpg
+    │   ├── vet2.jpg
+    │   └── vet3.jpg
+    ├── components/
+    │   ├── AuthProvider.jsx
+    │   ├── Footer.jsx
+    │   ├── LoadingSpinner.jsx
+    │   ├── Navbar.jsx
+    │   └── ServiceCard.jsx
+    ├── firebase/
+    │   └── config.js
+    ├── pages/
+    │   ├── ForgotPassword.jsx
+    │   ├── Home.jsx
+    │   ├── Login.jsx
+    │   ├── MyProfile.jsx
+    │   ├── NotFound.jsx
+    │   ├── Service.jsx
+    │   ├── ServiceDetails.jsx
+    │   └── Signup.jsx
+    └── route/
+        └── Route.jsx
+```
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
@@ -63,7 +108,7 @@ npm run dev
 npm run build
 ```
 
-##  Pages & Features
+## 📱 Pages & Features
 
 ### Home Page
 - Hero slider with winter pet care imagery
@@ -84,7 +129,7 @@ npm run build
 - Provider contact information
 - Rating and review display
 
-##  Design System
+## 🎨 Design System
 
 - **Color Palette**: Warm cream (#fffbf9) background with orange/pink gradients
 - **Typography**: Modern, clean fonts with proper hierarchy
@@ -92,7 +137,7 @@ npm run build
 - **Animations**: Smooth transitions and hover effects
 - **Responsive**: Mobile-first design approach
 
-##  Configuration
+## 🔧 Configuration
 
 ### Firebase Setup
 The app uses Firebase for authentication. The configuration is set up in `src/firebase/config.js` with the following services:
@@ -110,7 +155,7 @@ VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 VITE_FIREBASE_APP_ID=your_app_id
 ```
 
-##  NPM Packages Used
+## 📦 NPM Packages Used
 
 - **@tailwindcss/vite**: Tailwind CSS integration
 - **animate.css**: CSS animation library
@@ -126,7 +171,21 @@ VITE_FIREBASE_APP_ID=your_app_id
 - **tailwindcss**: Utility-first CSS framework
 - **daisyui**: Tailwind CSS component library
 
-##  Deployment
+## 🌐 Deployment
 
 The app is configured for deployment on platforms like Netlify or Vercel. The `public/_redirects` file ensures proper SPA routing.
 
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📞 Support
+
+For support or questions, please contact us at info@warmpaws.com
