@@ -116,7 +116,7 @@ const Home = () => {
           }}
           pagination={{ clickable: true }}
           navigation={true}
-          className="w-full max-h-[80vh]"
+          className="w-full max-h-[70vh]"
         >
           {[hero1, hero2, hero3].map((img, i) => (
             <SwiperSlide key={i}>

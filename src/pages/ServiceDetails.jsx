@@ -10,23 +10,12 @@ const ServiceDetails = () => {
   const { user } = useAuth()
   const [service, setService] = useState(null)
   const [isBooking, setIsBooking] = useState(false)
-  // const [loading, setLoading] = useState(true)
   const [bookingForm, setBookingForm] = useState({
     name: '',
     email: ''
   })
 
   useEffect(() => {
-    // Check if user is logged in
-    if (!user) {
-      navigate('/login', { state: { from: { pathname: `/service/${id}` } } })
-      return
-    }
-    // if (!user) {
-    //   navigate('/login')
-    //   return
-    // }
-
     // Fetch service data
     fetch('/services.json')
       .then(res => res.json())
@@ -41,9 +30,8 @@ const ServiceDetails = () => {
       .catch(error => {
         console.error('Error fetching service:', error)
         navigate('/')
-        // toast.error('Failed to load service')
       })
-  }, [id, user, navigate])
+  }, [id, navigate])
 
   const handleBookingChange = (e) => {
     setBookingForm({
@@ -55,16 +43,14 @@ const ServiceDetails = () => {
   const handleBookService = async (e) => {
     e.preventDefault()
     setIsBooking(true)
-    
+
     try {
       // Simulate booking process
       await new Promise(resolve => setTimeout(resolve, 2000))
       toast.success('Service booked successfully!')
-      // toast.succes('Service booked successfully!')
       setBookingForm({ name: '', email: '' })
     } catch (error) {
       toast.error('Failed to book service')
-      // console.log(error)
     } finally {
       setIsBooking(false)
     }
@@ -75,7 +61,6 @@ const ServiceDetails = () => {
       <div className="min-h-screen flex items-center justify-center bg-[#fffbf9]">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto"></div>
-          {/* <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-orange-500 mx-auto"></div> */}
           <p className="mt-4 text-gray-600">Loading service details...</p>
         </div>
       </div>
@@ -118,10 +103,9 @@ const ServiceDetails = () => {
                 <h1 className="text-3xl font-bold text-gray-900 mb-4">{service.serviceName}</h1>
                 <p className="text-gray-600 mb-6">{service.description}</p>
               </div>
-              
+
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Service Provider:</h3>
-                {/* <h3 className="text-lg font-bold text-gray-900 mb-3">Service Provider:</h3> */}
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="font-medium text-gray-900">{service.providerName}</p>
                   <p className="text-gray-600">{service.providerEmail}</p>
@@ -140,7 +124,7 @@ const ServiceDetails = () => {
                   <span className="text-3xl font-bold text-gray-900">${service.price}</span>
                   <span className="text-gray-600">Per session</span>
                 </div>
-                
+
                 <form onSubmit={handleBookService} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -157,7 +141,7 @@ const ServiceDetails = () => {
                       placeholder="Enter your full name"
                     />
                   </div>
-                  
+
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                       Your Email
@@ -173,7 +157,7 @@ const ServiceDetails = () => {
                       placeholder="Enter your email"
                     />
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isBooking}
@@ -181,13 +165,6 @@ const ServiceDetails = () => {
                   >
                     {isBooking ? 'Booking...' : 'Book Now'}
                   </button>
-                  {/* <button
-                    type="submit"
-                    disabled={isBooking}
-                    className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3 px-4 rounded-lg font-medium hover:from-orange-600 hover:to-pink-600 disabled:opacity-50 transition-all duration-200"
-                  >
-                    {isBooking ? 'Booking...' : 'Book Now'}
-                  </button> */}
                 </form>
               </div>
             </div>

@@ -70,6 +70,30 @@
       "description": "Delicious, vitamin-packed meals to boost energy and keep pets strong during the cold season.",
       "image": "https://www.hindustantimes.com/ht-img/img/2023/12/12/550x309/pet_nutrition_1702385553348_1702385566754.jpg",
       "category": "Nutrition"
-    }
+    },
+    {
+    "serviceId": 7,
+    "serviceName": "Indoor Playtime & Exercise",
+    "providerName": "ActivePaws Arena",
+    "providerEmail": "play@activepaws.com",
+    "price": 28,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Climate-controlled indoor play sessions with agility equipment and interactive toys to keep pets active when it's too cold outside.",
+    "image": "https://m.media-amazon.com/images/I/71TxFD9UYTL._AC_UF1000,1000_QL80_.jpg",
+    "category": "Exercise"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Wellness Checkup",
+    "providerName": "FrostyPet Veterinary",
+    "providerEmail": "clinic@frostypet.com",
+    "price": 45,
+    "rating": 5.0,
+    "slotsAvailable": 3,
+    "description": "Comprehensive health examination focusing on winter-related concerns like dry skin, joint stiffness, and immune system support.",
+    "image": "https://kvetac.com/files/2024/01/pet-wellness-exam-pet-check-up-600x400.jpg",
+    "category": "Healthcare"
+  }
   ]
   
