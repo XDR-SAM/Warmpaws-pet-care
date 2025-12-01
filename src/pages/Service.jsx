@@ -5,6 +5,7 @@ import 'animate.css'
 const Service = () => {
   const [services, setServices] = useState([])
   const [loading, setLoading] = useState(true)
+  const [selectedCategory, setSelectedCategory] = useState('All')
 
   useEffect(() => {
     // Fetch services data
@@ -19,6 +20,14 @@ const Service = () => {
         setLoading(false)
       })
   }, [])
+
+  // Get unique categories from services
+  const categories = ['All', ...new Set(services.map(service => service.category))]
+
+  // Filter and sort services
+  const filteredServices = services
+    .filter(service => selectedCategory === 'All' || service.category === selectedCategory)
+    .sort((a, b) => b.rating - a.rating) // Sort by rating in descending order (highest first)
 
   if (loading) {
     return (
@@ -43,8 +52,24 @@ const Service = () => {
           </p>
         </div>
 
+        {/* Category Filter */}
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${selectedCategory === category
+                ? 'bg-orange-500 text-white shadow-lg scale-105'
+                : 'bg-white text-gray-700 hover:bg-orange-100 hover:text-orange-600 shadow-md'
+                }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
+          {filteredServices.map((service) => (
             <ServiceCard key={service.serviceId} service={service} />
           ))}
         </div>
@@ -54,7 +79,7 @@ const Service = () => {
           ))}
         </div> */}
 
-        {services.length === 0 && (
+        {filteredServices.length === 0 && (
           <div className="text-center py-12">
             <div className="text-gray-400 text-6xl mb-4">🐾</div>
             <h3 className="text-xl font-semibold text-gray-600 mb-2">No services available</h3>
