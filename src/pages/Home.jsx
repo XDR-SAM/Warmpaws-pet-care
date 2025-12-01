@@ -116,7 +116,7 @@ const Home = () => {
           }}
           pagination={{ clickable: true }}
           navigation={true}
-          className="w-full h-auto md:h-[calc(100vh-74px)]"
+          className="w-full max-h-[80vh]"
         >
           {[hero1, hero2, hero3].map((img, i) => (
             <SwiperSlide key={i}>
@@ -124,7 +124,7 @@ const Home = () => {
                 <img
                   src={img}
                   alt={`Hero ${i + 1}`}
-                  className="w-full h-full object-cover md:object-contain rounded-none sm:rounded-xl"
+                  className="w-auto h-full max-h-[80vh] object-contain rounded-none sm:rounded-xl mx-auto"
                 />
               </div>
             </SwiperSlide>
@@ -144,8 +144,8 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
-            {services.slice(0, 6).map((service, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {services.slice(0, 8).map((service, index) => (
               <div key={service.serviceId} data-aos="fade-up" data-aos-delay={index * 100}>
                 <ServiceCard service={service} />
               </div>
@@ -231,9 +231,8 @@ const Home = () => {
             {membershipPlans.map((plan, index) => (
               <div
                 key={plan.id}
-                className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all relative ${
-                  plan.popular ? 'ring-2 ring-orange-500 transform scale-[1.02]' : ''
-                }`}
+                className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all relative ${plan.popular ? 'ring-2 ring-orange-500 transform scale-[1.02]' : ''
+                  }`}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
@@ -269,11 +268,10 @@ const Home = () => {
                 </ul>
 
                 <button
-                  className={`w-full py-2.5 rounded-lg font-semibold text-sm transition-colors ${
-                    plan.popular
-                      ? 'bg-orange-500 text-white hover:bg-orange-600'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
+                  className={`w-full py-2.5 rounded-lg font-semibold text-sm transition-colors ${plan.popular
+                    ? 'bg-orange-500 text-white hover:bg-orange-600'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
                 >
                   Choose Plan
                 </button>
